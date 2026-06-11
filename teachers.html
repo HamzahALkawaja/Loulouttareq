@@ -1,0 +1,884 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Educational Staff - More Teachers</title>
+
+    <link rel="stylesheet" href="./style.css">
+    <link rel="icon" type="image/png" href="./favicon2.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@600&display=swap" rel="stylesheet" />
+
+    <script src="https://assets.emergent.sh/scripts/emergent-main.js"></script>
+    <script>
+        window.tailwind = window.tailwind || {}; 
+        tailwind.config = { corePlugins: { preflight: false } };
+    </script>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+      /* إخفاء الأقسام الزائدة من الصفحة الرئيسية */
+      #root > div > :not(header):not(nav) {
+        display: none !important;
+      }
+
+      /* إخفاء الفوتر الأزرق نهائياً من هذه الصفحة */
+      footer, [class*="footer"], [id*="footer"] {
+        display: none !important;
+      }
+
+      /* إخفاء زر More القديم */
+      div[style*="position: absolute"] {
+        display: none !important;
+      }
+
+      /* البوكس الرئيسي: يرث الخط الفخم من الموقع وينزل تحت الهيدر */
+      .teachers-page-container {
+        background-color: white;
+        margin-top: 130px; 
+        padding: 20px 20px 60px 20px;
+        min-height: 100vh;
+        direction: rtl;
+        font-family: inherit !important;
+      }
+
+      /* تغيير الاتجاه للإنجليزي لما تنقلب اللغة */
+      .teachers-page-container.lang-en {
+        direction: ltr !important;
+      }
+
+      /* تطبيق الخط الفخم على كل النصوص */
+      .teachers-page-container h2,
+      .teachers-page-container h3,
+      .teachers-page-container p,
+      .teachers-page-container span {
+        font-family: inherit !important;
+      }
+
+      /* شبكة بوكسات المعلمين */
+      .teachers-grid {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 25px;
+        padding: 20px;
+      }
+
+      /* تصميم كرت المعلم المتناسق مع الهوية الأصلية */
+      .teacher-card {
+        background: white;
+        border: 1px solid #e5e7eb;
+        border-radius: 16px;
+        padding: 24px;
+        text-align: center;
+        box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+        transition: transform 0.2s, box-shadow 0.2s;
+        position: relative;
+      }
+      .teacher-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
+        border-color: #10b981;
+      }
+
+      /* دائرة الحرف الملونة */
+      .teacher-avatar {
+        width: 90px;
+        height: 90px;
+        border-radius: 50%;
+        margin: 0 auto 16px auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 36px;
+        font-weight: bold;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      }
+
+      /* النجمة الصفراء الصغيرة */
+      .badge-icon {
+        position: absolute;
+        top: 85px;
+        left: 53%;
+        transform: translateX(-50%);
+        background: #f59e0b;
+        color: white;
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 12px;
+        border: 2px solid white;
+      }
+
+      /* تحكم إخفاء وإظهار النصوص حسب اللغة الشغالة (الافتراضي عربي) */
+      .lang-text-en { display: none; }
+      .lang-text-ar { display: inline-block; }
+
+      /* لما تكون حاوية الصفحة باللغة الإنجليزية */
+      .lang-en .lang-text-ar { display: none !important; }
+      .lang-en .lang-text-en { display: inline-block !important; }
+    </style>
+</head>
+<body>
+
+    <div id="root"></div>
+
+    <div class="teachers-page-container" id="teachersContainer">
+      <h2 style="text-align: center; color: #1f2937; font-size: 28px; font-weight: bold; margin-bottom: 40px;">
+        <span class="lang-text-ar">كادرنا التعليمي - المزيد من المعلمين</span>
+        <span class="lang-text-en">Our Educational Staff - More Teachers</span>
+      </h2>
+      
+      <div class="teachers-grid">
+        
+        <div class="teacher-card">
+          <div class="teacher-avatar" style="background: linear-gradient(135deg, #f59e0b, #d97706);">
+            <span class="lang-text-ar">أ</span><span class="lang-text-en">T</span>
+          </div>
+          <div class="badge-icon">★</div>
+          <h3 style="font-size: 19px; font-weight: bold; color: #111827; margin: 10px 0 5px 0;">
+            <span class="lang-text-ar">أ. معلم </span><span class="lang-text-en">T.teacher </span>
+          </h3>
+          <p style="color: #059669; font-weight: bold; margin-bottom: 2px; font-size: 15px;">
+            <span class="lang-text-ar">معلم </span><span class="lang-text-en">Teacher</span>
+          </p>
+          <p style="color: #6b7280; font-size: 13px; margin-bottom: 10px;">
+            <span class="lang-text-ar">المادة</span><span class="lang-text-en">Subject</span>
+          </p>
+          <span style="background-color: #d1fae5; color: #065f46; padding: 4px 12px; border-radius: 20px; font-size: 12px; display: inline-block; font-weight: bold;">
+            <span class="lang-text-ar">5+ سنة خبرة</span><span class="lang-text-en">5+ Years of Exp</span>
+          </span>
+        </div>
+
+        <div class="teacher-card">
+          <div class="teacher-avatar" style="background: linear-gradient(135deg, #b756e4, #8b5cf6);">
+            <span class="lang-text-ar">أ</span><span class="lang-text-en">T</span>
+          </div>
+          <div class="badge-icon">★</div>
+          <h3 style="font-size: 19px; font-weight: bold; color: #111827; margin: 10px 0 5px 0;">
+            <span class="lang-text-ar">أ. معلم </span><span class="lang-text-en">T. teacher </span>
+          </h3>
+          <p style="color: #059669; font-weight: bold; margin-bottom: 2px; font-size: 15px;">
+            <span class="lang-text-ar">معلم  </span><span class="lang-text-en"> Teacher</span>
+          </p>
+          <p style="color: #6b7280; font-size: 13px; margin-bottom: 10px;">
+            <span class="lang-text-ar">الماده</span><span class="lang-text-en">Subject</span>
+          </p>
+          <span style="background-color: #d1fae5; color: #065f46; padding: 4px 12px; border-radius: 20px; font-size: 12px; display: inline-block; font-weight: bold;">
+            <span class="lang-text-ar">5+ سنة خبرة</span><span class="lang-text-en">5+ Years of Exp</span>
+          </span>
+        </div>
+
+        <div class="teacher-card">
+          <div class="teacher-avatar" style="background: linear-gradient(135deg, #3b82f6, #1d4ed8);">
+            <span class="lang-text-ar">أ</span><span class="lang-text-en">T</span>
+          </div>
+          <div class="badge-icon">★</div>
+          <h3 style="font-size: 19px; font-weight: bold; color: #111827; margin: 10px 0 5px 0;">
+            <span class="lang-text-ar">أ. معلم    </span><span class="lang-text-en">T. teacher</span>
+          </h3>
+          <p style="color: #059669; font-weight: bold; margin-bottom: 2px; font-size: 15px;">
+            <span class="lang-text-ar">معلم  </span><span class="lang-text-en">  Teacher</span>
+          </p>
+          <p style="color: #6b7280; font-size: 13px; margin-bottom: 10px;">
+            <span class="lang-text-ar">المادة </span><span class="lang-text-en">Subject</span>
+          </p>
+          <span style="background-color: #d1fae5; color: #065f46; padding: 4px 12px; border-radius: 20px; font-size: 12px; display: inline-block; font-weight: bold;">
+            <span class="lang-text-ar">5+ سنة خبرة</span><span class="lang-text-en">5+ Years of Exp</span>
+          </span>
+        </div>
+
+        <div class="teacher-card">
+          <div class="teacher-avatar" style="background: linear-gradient(135deg, #10b981, #047857);">
+            <span class="lang-text-ar">أ</span><span class="lang-text-en">T</span>
+          </div>
+          <div class="badge-icon">★</div>
+          <h3 style="font-size: 19px; font-weight: bold; color: #111827; margin: 10px 0 5px 0;">
+            <span class="lang-text-ar">ا. معلم  </span><span class="lang-text-en">T.</span>
+          </h3>
+          <p style="color: #059669; font-weight: bold; margin-bottom: 2px; font-size: 15px;">
+            <span class="lang-text-ar">معلم  </span><span class="lang-text-en">  Teacher</span>
+          </p>
+          <p style="color: #6b7280; font-size: 13px; margin-bottom: 10px;">
+            <span class="lang-text-ar">المادة  </span><span class="lang-text-en">Subject</span>
+          </p>
+          <span style="background-color: #d1fae5; color: #065f46; padding: 4px 12px; border-radius: 20px; font-size: 12px; display: inline-block; font-weight: bold;">
+            <span class="lang-text-ar">5+ سنة خبرة</span><span class="lang-text-en">5+ Years of Exp</span>
+          </span>
+        </div>
+
+        <div class="teacher-card">
+          <div class="teacher-avatar" style="background: linear-gradient(135deg, #ec4899, #be185d);">
+            <span class="lang-text-ar">أ</span><span class="lang-text-en">T</span>
+          </div>
+          <div class="badge-icon">★</div>
+          <h3 style="font-size: 19px; font-weight: bold; color: #111827; margin: 10px 0 5px 0;">
+            <span class="lang-text-ar">أ.  معلم  </span><span class="lang-text-en">T.teacher  </span>
+          </h3>
+          <p style="color: #059669; font-weight: bold; margin-bottom: 2px; font-size: 15px;">
+            <span class="lang-text-ar">معلم  </span><span class="lang-text-en">Arabic Language Teacher</span>
+          </p>
+          <p style="color: #6b7280; font-size: 13px; margin-bottom: 10px;">
+            <span class="lang-text-ar">المادة  </span><span class="lang-text-en">Subject</span>
+          </p>
+          <span style="background-color: #d1fae5; color: #065f46; padding: 4px 12px; border-radius: 20px; font-size: 12px; display: inline-block; font-weight: bold;">
+            <span class="lang-text-ar">5+ سنوات خبرة</span><span class="lang-text-en">5+ Years Exp</span>
+          </span>
+        </div>
+
+        <div class="teacher-card">
+          <div class="teacher-avatar" style="background: linear-gradient(135deg, #3b82f6, #1d4ed8);">
+            <span class="lang-text-ar">أ</span><span class="lang-text-en">T</span>
+          </div>
+          <div class="badge-icon">★</div>
+          <h3 style="font-size: 19px; font-weight: bold; color: #111827; margin: 10px 0 5px 0;">
+            <span class="lang-text-ar">أ. معلم </span><span class="lang-text-en">T. teacher</span>
+          </h3>
+          <p style="color: #059669; font-weight: bold; margin-bottom: 2px; font-size: 15px;">
+            <span class="lang-text-ar">معلم  </span><span class="lang-text-en">  Teacher</span>
+          </p>
+          <p style="color: #6b7280; font-size: 13px; margin-bottom: 10px;">
+            <span class="lang-text-ar">المادة  </span><span class="lang-text-en">Subject</span>
+          </p>
+          <span style="background-color: #d1fae5; color: #065f46; padding: 4px 12px; border-radius: 20px; font-size: 12px; display: inline-block; font-weight: bold;">
+            <span class="lang-text-ar">5+ سنوات خبرة</span><span class="lang-text-en">5+ Years Exp</span>
+          </span>
+        </div>
+
+        <div class="teacher-card">
+          <div class="teacher-avatar" style="background: linear-gradient(135deg, #10b981, #047857);">
+            <span class="lang-text-ar">أ</span><span class="lang-text-en">T</span>
+          </div>
+          <div class="badge-icon">★</div>
+          <h3 style="font-size: 19px; font-weight: bold; color: #111827; margin: 10px 0 5px 0;">
+            <span class="lang-text-ar">أ. معلم  </span><span class="lang-text-en">T.teacher</span>
+          </h3>
+          <p style="color: #059669; font-weight: bold; margin-bottom: 2px; font-size: 15px;">
+            <span class="lang-text-ar">معلم </span><span class="lang-text-en">  Teacher</span>
+          </p>
+          <p style="color: #6b7280; font-size: 13px; margin-bottom: 10px;">
+            <span class="lang-text-ar"> المادة</span><span class="lang-text-en">Subject</span>
+          </p>
+          <span style="background-color: #d1fae5; color: #065f46; padding: 4px 12px; border-radius: 20px; font-size: 12px; display: inline-block; font-weight: bold;">
+            <span class="lang-text-ar">5+ سنوات خبرة</span><span class="lang-text-en">5+ Years Exp</span>
+          </span>
+        </div>
+
+        <div class="teacher-card">
+          <div class="teacher-avatar" style="background: linear-gradient(135deg, #f59e0b, #d97706);">
+            <span class="lang-text-ar">أ</span><span class="lang-text-en">T</span>
+          </div>
+          <div class="badge-icon">★</div>
+          <h3 style="font-size: 19px; font-weight: bold; color: #111827; margin: 10px 0 5px 0;">
+            <span class="lang-text-ar">أ. معلم </span><span class="lang-text-en">T. Teacher</span>
+          </h3>
+          <p style="color: #059669; font-weight: bold; margin-bottom: 2px; font-size: 15px;">
+            <span class="lang-text-ar">معلم المادة </span><span class="lang-text-en">  Teacher</span>
+          </p>
+          <p style="color: #6b7280; font-size: 13px; margin-bottom: 10px;">
+            <span class="lang-text-ar">المادة  </span><span class="lang-text-en">Teacher </span>
+          </p>
+          <span style="background-color: #d1fae5; color: #065f46; padding: 4px 12px; border-radius: 20px; font-size: 12px; display: inline-block; font-weight: bold;">
+            <span class="lang-text-ar">0+ سنوات خبرة</span><span class="lang-text-en">0+ Years Exp</span>
+          </span>
+        </div>
+
+        <div class="teacher-card">
+          <div class="teacher-avatar" style="background: linear-gradient(135deg, #b756e4, #8b5cf6);">
+            <span class="lang-text-ar">أ</span><span class="lang-text-en">T</span>
+          </div>
+          <div class="badge-icon">★</div>
+          <h3 style="font-size: 19px; font-weight: bold; color: #111827; margin: 10px 0 5px 0;">
+            <span class="lang-text-ar">أ.  معلم </span><span class="lang-text-en">T. Teacher  </span>
+          </h3>
+          <p style="color: #059669; font-weight: bold; margin-bottom: 2px; font-size: 15px;">
+            <span class="lang-text-ar"> معلم المادة </span><span class="lang-text-en"> Teacher </span>
+          </p>
+          <p style="color: #6b7280; font-size: 13px; margin-bottom: 10px;">
+            <span class="lang-text-ar"> المادة</span><span class="lang-text-en"> teacher</span>
+          </p>
+          <span style="background-color: #d1fae5; color: #065f46; padding: 4px 12px; border-radius: 20px; font-size: 12px; display: inline-block; font-weight: bold;">
+            <span class="lang-text-ar">0+ سنوات خبرة</span><span class="lang-text-en">0+ Years Exp</span>
+          </span>
+        </div>
+
+        <div class="teacher-card">
+          <div class="teacher-avatar" style="background: linear-gradient(135deg, #ec4899, #be185d);">
+            <span class="lang-text-ar">أ</span><span class="lang-text-en">T</span>
+          </div>
+          <div class="badge-icon">★</div>
+          <h3 style="font-size: 19px; font-weight: bold; color: #111827; margin: 10px 0 5px 0;">
+            <span class="lang-text-ar">أ.  معلم</span><span class="lang-text-en">T. Teacher </span>
+          </h3>
+          <p style="color: #059669; font-weight: bold; margin-bottom: 2px; font-size: 15px;">
+            <span class="lang-text-ar">معلم   </span><span class="lang-text-en"> Teacher</span>
+          </p>
+          <p style="color: #6b7280; font-size: 13px; margin-bottom: 10px;">
+            <span class="lang-text-ar">  الماده </span><span class="lang-text-en"> Teacher</span>
+          </p>
+          <span style="background-color: #d1fae5; color: #065f46; padding: 4px 12px; border-radius: 20px; font-size: 12px; display: inline-block; font-weight: bold;">
+            <span class="lang-text-ar">5+ سنوات خبرة</span><span class="lang-text-en">5+ Years Exp</span>
+          </span>
+        </div>
+
+        <div class="teacher-card">
+          <div class="teacher-avatar" style="background: linear-gradient(135deg, #3b82f6, #1d4ed8);">
+            <span class="lang-text-ar">أ</span><span class="lang-text-en">T</span>
+          </div>
+          <div class="badge-icon">★</div>
+          <h3 style="font-size: 19px; font-weight: bold; color: #111827; margin: 10px 0 5px 0;">
+            <span class="lang-text-ar">أ.   </span><span class="lang-text-en">T. teacher </span>
+          </h3>
+          <p style="color: #059669; font-weight: bold; margin-bottom: 2px; font-size: 15px;">
+            <span class="lang-text-ar">معلمة </span><span class="lang-text-en"> Teacher</span>
+          </p>
+          <p style="color: #6b7280; font-size: 13px; margin-bottom: 10px;">
+            <span class="lang-text-ar">المادة </span><span class="lang-text-en">subject</span>
+          </p>
+          <span style="background-color: #d1fae5; color: #065f46; padding: 4px 12px; border-radius: 20px; font-size: 12px; display: inline-block; font-weight: bold;">
+            <span class="lang-text-ar">5+ سنوات خبرة</span><span class="lang-text-en">5+ Years Exp</span>
+          </span>
+        </div>
+
+        <div class="teacher-card">
+          <div class="teacher-avatar" style="background: linear-gradient(135deg, #10b981, #047857);">
+            <span class="lang-text-ar">أ</span><span class="lang-text-en">T</span>
+          </div>
+          <div class="badge-icon">★</div>
+          <h3 style="font-size: 19px; font-weight: bold; color: #111827; margin: 10px 0 5px 0;">
+            <span class="lang-text-ar">أ. معلم </span><span class="lang-text-en">T. teacher </span>
+          </h3>
+          <p style="color: #059669; font-weight: bold; margin-bottom: 2px; font-size: 15px;">
+            <span class="lang-text-ar">معلم </span><span class="lang-text-en"> Teacher</span>
+          </p>
+          <p style="color: #6b7280; font-size: 13px; margin-bottom: 10px;">
+            <span class="lang-text-ar"> المادة</span><span class="lang-text-en">Subject</span>
+          </p>
+          <span style="background-color: #d1fae5; color: #065f46; padding: 4px 12px; border-radius: 20px; font-size: 12px; display: inline-block; font-weight: bold;">
+            <span class="lang-text-ar">5+ سنوات خبرة</span><span class="lang-text-en">5+ Years Exp</span>
+          </span>
+        </div>
+
+        <div class="teacher-card">
+          <div class="teacher-avatar" style="background: linear-gradient(135deg, #f59e0b, #d97706);">
+            <span class="lang-text-ar">أ</span><span class="lang-text-en">T</span>
+          </div>
+          <div class="badge-icon">★</div>
+          <h3 style="font-size: 19px; font-weight: bold; color: #111827; margin: 10px 0 5px 0;">
+            <span class="lang-text-ar">أ. معلم </span><span class="lang-text-en">T.  </span>
+          </h3>
+          <p style="color: #059669; font-weight: bold; margin-bottom: 2px; font-size: 15px;">
+            <span class="lang-text-ar">معلم </span><span class="lang-text-en"> Teacher</span>
+          </p>
+          <p style="color: #6b7280; font-size: 13px; margin-bottom: 10px;">
+            <span class="lang-text-ar">المادة </span><span class="lang-text-en">Subject</span>
+          </p>
+          <span style="background-color: #d1fae5; color: #065f46; padding: 4px 12px; border-radius: 20px; font-size: 12px; display: inline-block; font-weight: bold;">
+            <span class="lang-text-ar">5+ سنوات خبرة</span><span class="lang-text-en">5+ Years Exp</span>
+          </span>
+        </div>
+
+        <div class="teacher-card">
+          <div class="teacher-avatar" style="background: linear-gradient(135deg, #b756e4, #8b5cf6);">
+            <span class="lang-text-ar">أ</span><span class="lang-text-en">T</span>
+          </div>
+          <div class="badge-icon">★</div>
+          <h3 style="font-size: 19px; font-weight: bold; color: #111827; margin: 10px 0 5px 0;">
+            <span class="lang-text-ar">أ. معلم </span><span class="lang-text-en">T. teacher  </span>
+          </h3>
+          <p style="color: #059669; font-weight: bold; margin-bottom: 2px; font-size: 15px;">
+            <span class="lang-text-ar">معلم </span><span class="lang-text-en"> Teacher</span>
+          </p>
+          <p style="color: #6b7280; font-size: 13px; margin-bottom: 10px;">
+            <span class="lang-text-ar">المادة </span><span class="lang-text-en">Subject</span>
+          </p>
+          <span style="background-color: #d1fae5; color: #065f46; padding: 4px 12px; border-radius: 20px; font-size: 12px; display: inline-block; font-weight: bold;">
+            <span class="lang-text-ar">5+ سنوات خبرة</span><span class="lang-text-en">5+ Years Exp</span>
+          </span>
+        </div>
+
+        <div class="teacher-card">
+          <div class="teacher-avatar" style="background: linear-gradient(135deg, #ec4899, #be185d);">
+            <span class="lang-text-ar">أ</span><span class="lang-text-en">T</span>
+          </div>
+          <div class="badge-icon">★</div>
+          <h3 style="font-size: 19px; font-weight: bold; color: #111827; margin: 10px 0 5px 0;">
+            <span class="lang-text-ar">أ. معلم </span><span class="lang-text-en">T.  </span>
+          </h3>
+          <p style="color: #059669; font-weight: bold; margin-bottom: 2px; font-size: 15px;">
+            <span class="lang-text-ar">معلم </span><span class="lang-text-en"> Teacher</span>
+          </p>
+          <p style="color: #6b7280; font-size: 13px; margin-bottom: 10px;">
+            <span class="lang-text-ar">المادة </span><span class="lang-text-en">Subject</span>
+          </p>
+          <span style="background-color: #d1fae5; color: #065f46; padding: 4px 12px; border-radius: 20px; font-size: 12px; display: inline-block; font-weight: bold;">
+            <span class="lang-text-ar">5+ سنوات خبرة</span><span class="lang-text-en">5+ Years Exp</span>
+          </span>
+        </div>
+
+        <div class="teacher-card">
+          <div class="teacher-avatar" style="background: linear-gradient(135deg, #3b82f6, #1d4ed8);">
+            <span class="lang-text-ar">أ</span><span class="lang-text-en">T</span>
+          </div>
+          <div class="badge-icon">★</div>
+          <h3 style="font-size: 19px; font-weight: bold; color: #111827; margin: 10px 0 5px 0;">
+            <span class="lang-text-ar">أ. معلم  </span><span class="lang-text-en">T.  teacher </span>
+          </h3>
+          <p style="color: #059669; font-weight: bold; margin-bottom: 2px; font-size: 15px;">
+            <span class="lang-text-ar">معلم </span><span class="lang-text-en"> Teacher</span>
+          </p>
+          <p style="color: #6b7280; font-size: 13px; margin-bottom: 10px;">
+            <span class="lang-text-ar">المادة </span><span class="lang-text-en">Subject</span>
+          </p>
+          <span style="background-color: #d1fae5; color: #065f46; padding: 4px 12px; border-radius: 20px; font-size: 12px; display: inline-block; font-weight: bold;">
+            <span class="lang-text-ar">5+ سنوات خبرة</span><span class="lang-text-en">5+ Years Exp</span>
+          </span>
+        </div>
+
+        <div class="teacher-card">
+          <div class="teacher-avatar" style="background: linear-gradient(135deg, #10b981, #047857);">
+            <span class="lang-text-ar">أ</span><span class="lang-text-en">T</span>
+          </div>
+          <div class="badge-icon">★</div>
+          <h3 style="font-size: 19px; font-weight: bold; color: #111827; margin: 10px 0 5px 0;">
+            <span class="lang-text-ar">أ. معلم </span><span class="lang-text-en">T. teacher </span>
+          </h3>
+          <p style="color: #059669; font-weight: bold; margin-bottom: 2px; font-size: 15px;">
+            <span class="lang-text-ar"> معلم</span><span class="lang-text-en"> Teacher</span>
+          </p>
+          <p style="color: #6b7280; font-size: 13px; margin-bottom: 10px;">
+            <span class="lang-text-ar">المادة </span><span class="lang-text-en">Subject</span>
+          </p>
+          <span style="background-color: #d1fae5; color: #065f46; padding: 4px 12px; border-radius: 20px; font-size: 12px; display: inline-block; font-weight: bold;">
+            <span class="lang-text-ar">5+ سنوات خبرة</span><span class="lang-text-en">5+ Years Exp</span>
+          </span>
+        </div>
+
+        <div class="teacher-card">
+          <div class="teacher-avatar" style="background: linear-gradient(135deg, #f59e0b, #d97706);">
+            <span class="lang-text-ar">أ</span><span class="lang-text-en">T</span>
+          </div>
+          <div class="badge-icon">★</div>
+          <h3 style="font-size: 19px; font-weight: bold; color: #111827; margin: 10px 0 5px 0;">
+            <span class="lang-text-ar">أ. معلم 18</span><span class="lang-text-en">Teacher 18</span>
+          </h3>
+          <p style="color: #059669; font-weight: bold; margin-bottom: 2px; font-size: 15px;">
+            <span class="lang-text-ar">التخصص</span><span class="lang-text-en">Specialty</span>
+          </p>
+          <p style="color: #6b7280; font-size: 13px; margin-bottom: 10px;">
+            <span class="lang-text-ar">المادة الدراسية</span><span class="lang-text-en">Subject</span>
+          </p>
+          <span style="background-color: #d1fae5; color: #065f46; padding: 4px 12px; border-radius: 20px; font-size: 12px; display: inline-block; font-weight: bold;">
+            <span class="lang-text-ar">5+ سنوات خبرة</span><span class="lang-text-en">5+ Years Exp</span>
+          </span>
+        </div>
+
+        <div class="teacher-card">
+          <div class="teacher-avatar" style="background: linear-gradient(135deg, #b756e4, #8b5cf6);">
+            <span class="lang-text-ar">أ</span><span class="lang-text-en">T</span>
+          </div>
+          <div class="badge-icon">★</div>
+          <h3 style="font-size: 19px; font-weight: bold; color: #111827; margin: 10px 0 5px 0;">
+            <span class="lang-text-ar">أ. معلم 19</span><span class="lang-text-en">Teacher 19</span>
+          </h3>
+          <p style="color: #059669; font-weight: bold; margin-bottom: 2px; font-size: 15px;">
+            <span class="lang-text-ar">التخصص</span><span class="lang-text-en">Specialty</span>
+          </p>
+          <p style="color: #6b7280; font-size: 13px; margin-bottom: 10px;">
+            <span class="lang-text-ar">المادة الدراسية</span><span class="lang-text-en">Subject</span>
+          </p>
+          <span style="background-color: #d1fae5; color: #065f46; padding: 4px 12px; border-radius: 20px; font-size: 12px; display: inline-block; font-weight: bold;">
+            <span class="lang-text-ar">5+ سنوات خبرة</span><span class="lang-text-en">5+ Years Exp</span>
+          </span>
+        </div>
+
+        <div class="teacher-card">
+          <div class="teacher-avatar" style="background: linear-gradient(135deg, #ec4899, #be185d);">
+            <span class="lang-text-ar">أ</span><span class="lang-text-en">T</span>
+          </div>
+          <div class="badge-icon">★</div>
+          <h3 style="font-size: 19px; font-weight: bold; color: #111827; margin: 10px 0 5px 0;">
+            <span class="lang-text-ar">أ. معلم 20</span><span class="lang-text-en">Teacher 20</span>
+          </h3>
+          <p style="color: #059669; font-weight: bold; margin-bottom: 2px; font-size: 15px;">
+            <span class="lang-text-ar">التخصص</span><span class="lang-text-en">Specialty</span>
+          </p>
+          <p style="color: #6b7280; font-size: 13px; margin-bottom: 10px;">
+            <span class="lang-text-ar">المادة الدراسية</span><span class="lang-text-en">Subject</span>
+          </p>
+          <span style="background-color: #d1fae5; color: #065f46; padding: 4px 12px; border-radius: 20px; font-size: 12px; display: inline-block; font-weight: bold;">
+            <span class="lang-text-ar">5+ سنوات خبرة</span><span class="lang-text-en">5+ Years Exp</span>
+          </span>
+        </div>
+
+        <div class="teacher-card">
+          <div class="teacher-avatar" style="background: linear-gradient(135deg, #3b82f6, #1d4ed8);">
+            <span class="lang-text-ar">أ</span><span class="lang-text-en">T</span>
+          </div>
+          <div class="badge-icon">★</div>
+          <h3 style="font-size: 19px; font-weight: bold; color: #111827; margin: 10px 0 5px 0;">
+            <span class="lang-text-ar">أ. معلم 21</span><span class="lang-text-en">Teacher 21</span>
+          </h3>
+          <p style="color: #059669; font-weight: bold; margin-bottom: 2px; font-size: 15px;">
+            <span class="lang-text-ar">التخصص</span><span class="lang-text-en">Specialty</span>
+          </p>
+          <p style="color: #6b7280; font-size: 13px; margin-bottom: 10px;">
+            <span class="lang-text-ar">المادة الدراسية</span><span class="lang-text-en">Subject</span>
+          </p>
+          <span style="background-color: #d1fae5; color: #065f46; padding: 4px 12px; border-radius: 20px; font-size: 12px; display: inline-block; font-weight: bold;">
+            <span class="lang-text-ar">5+ سنوات خبرة</span><span class="lang-text-en">5+ Years Exp</span>
+          </span>
+        </div>
+
+        <div class="teacher-card">
+          <div class="teacher-avatar" style="background: linear-gradient(135deg, #10b981, #047857);">
+            <span class="lang-text-ar">أ</span><span class="lang-text-en">T</span>
+          </div>
+          <div class="badge-icon">★</div>
+          <h3 style="font-size: 19px; font-weight: bold; color: #111827; margin: 10px 0 5px 0;">
+            <span class="lang-text-ar">أ. معلم 22</span><span class="lang-text-en">Teacher 22</span>
+          </h3>
+          <p style="color: #059669; font-weight: bold; margin-bottom: 2px; font-size: 15px;">
+            <span class="lang-text-ar">التخصص</span><span class="lang-text-en">Specialty</span>
+          </p>
+          <p style="color: #6b7280; font-size: 13px; margin-bottom: 10px;">
+            <span class="lang-text-ar">المادة الدراسية</span><span class="lang-text-en">Subject</span>
+          </p>
+          <span style="background-color: #d1fae5; color: #065f46; padding: 4px 12px; border-radius: 20px; font-size: 12px; display: inline-block; font-weight: bold;">
+            <span class="lang-text-ar">5+ سنوات خبرة</span><span class="lang-text-en">5+ Years Exp</span>
+          </span>
+        </div>
+
+        <div class="teacher-card">
+          <div class="teacher-avatar" style="background: linear-gradient(135deg, #f59e0b, #d97706);">
+            <span class="lang-text-ar">أ</span><span class="lang-text-en">T</span>
+          </div>
+          <div class="badge-icon">★</div>
+          <h3 style="font-size: 19px; font-weight: bold; color: #111827; margin: 10px 0 5px 0;">
+            <span class="lang-text-ar">أ. معلم 23</span><span class="lang-text-en">Teacher 23</span>
+          </h3>
+          <p style="color: #059669; font-weight: bold; margin-bottom: 2px; font-size: 15px;">
+            <span class="lang-text-ar">التخصص</span><span class="lang-text-en">Specialty</span>
+          </p>
+          <p style="color: #6b7280; font-size: 13px; margin-bottom: 10px;">
+            <span class="lang-text-ar">المادة الدراسية</span><span class="lang-text-en">Subject</span>
+          </p>
+          <span style="background-color: #d1fae5; color: #065f46; padding: 4px 12px; border-radius: 20px; font-size: 12px; display: inline-block; font-weight: bold;">
+            <span class="lang-text-ar">5+ سنوات خبرة</span><span class="lang-text-en">5+ Years Exp</span>
+          </span>
+        </div>
+
+        <div class="teacher-card">
+          <div class="teacher-avatar" style="background: linear-gradient(135deg, #b756e4, #8b5cf6);">
+            <span class="lang-text-ar">أ</span><span class="lang-text-en">T</span>
+          </div>
+          <div class="badge-icon">★</div>
+          <h3 style="font-size: 19px; font-weight: bold; color: #111827; margin: 10px 0 5px 0;">
+            <span class="lang-text-ar">أ. معلم 24</span><span class="lang-text-en">Teacher 24</span>
+          </h3>
+          <p style="color: #059669; font-weight: bold; margin-bottom: 2px; font-size: 15px;">
+            <span class="lang-text-ar">التخصص</span><span class="lang-text-en">Specialty</span>
+          </p>
+          <p style="color: #6b7280; font-size: 13px; margin-bottom: 10px;">
+            <span class="lang-text-ar">المادة الدراسية</span><span class="lang-text-en">Subject</span>
+          </p>
+          <span style="background-color: #d1fae5; color: #065f46; padding: 4px 12px; border-radius: 20px; font-size: 12px; display: inline-block; font-weight: bold;">
+            <span class="lang-text-ar">5+ سنوات خبرة</span><span class="lang-text-en">5+ Years Exp</span>
+          </span>
+        </div>
+
+
+
+<div class="teacher-card">
+          <div class="teacher-avatar" style="background: linear-gradient(135deg, #b756e4, #8b5cf6);">
+            <span class="lang-text-ar">أ</span><span class="lang-text-en">T</span>
+          </div>
+          <div class="badge-icon">★</div>
+          <h3 style="font-size: 19px; font-weight: bold; color: #111827; margin: 10px 0 5px 0;">
+            <span class="lang-text-ar">أ. معلم 24</span><span class="lang-text-en">Teacher 24</span>
+          </h3>
+          <p style="color: #059669; font-weight: bold; margin-bottom: 2px; font-size: 15px;">
+            <span class="lang-text-ar">التخصص</span><span class="lang-text-en">Specialty</span>
+          </p>
+          <p style="color: #6b7280; font-size: 13px; margin-bottom: 10px;">
+            <span class="lang-text-ar">المادة الدراسية</span><span class="lang-text-en">Subject</span>
+          </p>
+          <span style="background-color: #d1fae5; color: #065f46; padding: 4px 12px; border-radius: 20px; font-size: 12px; display: inline-block; font-weight: bold;">
+            <span class="lang-text-ar">5+ سنوات خبرة</span><span class="lang-text-en">5+ Years Exp</span>
+          </span>
+        </div>
+
+
+
+
+
+        <div class="teacher-card">
+          <div class="teacher-avatar" style="background: linear-gradient(135deg, #b756e4, #8b5cf6);">
+            <span class="lang-text-ar">أ</span><span class="lang-text-en">T</span>
+          </div>
+          <div class="badge-icon">★</div>
+          <h3 style="font-size: 19px; font-weight: bold; color: #111827; margin: 10px 0 5px 0;">
+            <span class="lang-text-ar">أ. معلم 24</span><span class="lang-text-en">Teacher 24</span>
+          </h3>
+          <p style="color: #059669; font-weight: bold; margin-bottom: 2px; font-size: 15px;">
+            <span class="lang-text-ar">التخصص</span><span class="lang-text-en">Specialty</span>
+          </p>
+          <p style="color: #6b7280; font-size: 13px; margin-bottom: 10px;">
+            <span class="lang-text-ar">المادة الدراسية</span><span class="lang-text-en">Subject</span>
+          </p>
+          <span style="background-color: #d1fae5; color: #065f46; padding: 4px 12px; border-radius: 20px; font-size: 12px; display: inline-block; font-weight: bold;">
+            <span class="lang-text-ar">5+ سنوات خبرة</span><span class="lang-text-en">5+ Years Exp</span>
+          </span>
+        </div>
+
+
+
+
+
+
+        <div class="teacher-card">
+          <div class="teacher-avatar" style="background: linear-gradient(135deg, #b756e4, #8b5cf6);">
+            <span class="lang-text-ar">أ</span><span class="lang-text-en">T</span>
+          </div>
+          <div class="badge-icon">★</div>
+          <h3 style="font-size: 19px; font-weight: bold; color: #111827; margin: 10px 0 5px 0;">
+            <span class="lang-text-ar">أ. معلم 24</span><span class="lang-text-en">Teacher 24</span>
+          </h3>
+          <p style="color: #059669; font-weight: bold; margin-bottom: 2px; font-size: 15px;">
+            <span class="lang-text-ar">التخصص</span><span class="lang-text-en">Specialty</span>
+          </p>
+          <p style="color: #6b7280; font-size: 13px; margin-bottom: 10px;">
+            <span class="lang-text-ar">المادة الدراسية</span><span class="lang-text-en">Subject</span>
+          </p>
+          <span style="background-color: #d1fae5; color: #065f46; padding: 4px 12px; border-radius: 20px; font-size: 12px; display: inline-block; font-weight: bold;">
+            <span class="lang-text-ar">5+ سنوات خبرة</span><span class="lang-text-en">5+ Years Exp</span>
+          </span>
+        </div>
+
+
+
+
+
+
+        <div class="teacher-card">
+          <div class="teacher-avatar" style="background: linear-gradient(135deg, #b756e4, #8b5cf6);">
+            <span class="lang-text-ar">أ</span><span class="lang-text-en">T</span>
+          </div>
+          <div class="badge-icon">★</div>
+          <h3 style="font-size: 19px; font-weight: bold; color: #111827; margin: 10px 0 5px 0;">
+            <span class="lang-text-ar">أ. معلم 24</span><span class="lang-text-en">Teacher 24</span>
+          </h3>
+          <p style="color: #059669; font-weight: bold; margin-bottom: 2px; font-size: 15px;">
+            <span class="lang-text-ar">التخصص</span><span class="lang-text-en">Specialty</span>
+          </p>
+          <p style="color: #6b7280; font-size: 13px; margin-bottom: 10px;">
+            <span class="lang-text-ar">المادة الدراسية</span><span class="lang-text-en">Subject</span>
+          </p>
+          <span style="background-color: #d1fae5; color: #065f46; padding: 4px 12px; border-radius: 20px; font-size: 12px; display: inline-block; font-weight: bold;">
+            <span class="lang-text-ar">5+ سنوات خبرة</span><span class="lang-text-en">5+ Years Exp</span>
+          </span>
+        </div>
+
+
+
+
+
+        <div class="teacher-card">
+          <div class="teacher-avatar" style="background: linear-gradient(135deg, #b756e4, #8b5cf6);">
+            <span class="lang-text-ar">أ</span><span class="lang-text-en">T</span>
+          </div>
+          <div class="badge-icon">★</div>
+          <h3 style="font-size: 19px; font-weight: bold; color: #111827; margin: 10px 0 5px 0;">
+            <span class="lang-text-ar">أ. معلم 24</span><span class="lang-text-en">Teacher 24</span>
+          </h3>
+          <p style="color: #059669; font-weight: bold; margin-bottom: 2px; font-size: 15px;">
+            <span class="lang-text-ar">التخصص</span><span class="lang-text-en">Specialty</span>
+          </p>
+          <p style="color: #6b7280; font-size: 13px; margin-bottom: 10px;">
+            <span class="lang-text-ar">المادة الدراسية</span><span class="lang-text-en">Subject</span>
+          </p>
+          <span style="background-color: #d1fae5; color: #065f46; padding: 4px 12px; border-radius: 20px; font-size: 12px; display: inline-block; font-weight: bold;">
+            <span class="lang-text-ar">5+ سنوات خبرة</span><span class="lang-text-en">5+ Years Exp</span>
+          </span>
+        </div>
+
+
+
+
+
+
+        <div class="teacher-card">
+          <div class="teacher-avatar" style="background: linear-gradient(135deg, #b756e4, #8b5cf6);">
+            <span class="lang-text-ar">أ</span><span class="lang-text-en">T</span>
+          </div>
+          <div class="badge-icon">★</div>
+          <h3 style="font-size: 19px; font-weight: bold; color: #111827; margin: 10px 0 5px 0;">
+            <span class="lang-text-ar">أ. معلم 24</span><span class="lang-text-en">Teacher 24</span>
+          </h3>
+          <p style="color: #059669; font-weight: bold; margin-bottom: 2px; font-size: 15px;">
+            <span class="lang-text-ar">التخصص</span><span class="lang-text-en">Specialty</span>
+          </p>
+          <p style="color: #6b7280; font-size: 13px; margin-bottom: 10px;">
+            <span class="lang-text-ar">المادة الدراسية</span><span class="lang-text-en">Subject</span>
+          </p>
+          <span style="background-color: #d1fae5; color: #065f46; padding: 4px 12px; border-radius: 20px; font-size: 12px; display: inline-block; font-weight: bold;">
+            <span class="lang-text-ar">5+ سنوات خبرة</span><span class="lang-text-en">5+ Years Exp</span>
+          </span>
+        </div>
+
+
+
+
+        <div class="teacher-card">
+          <div class="teacher-avatar" style="background: linear-gradient(135deg, #b756e4, #8b5cf6);">
+            <span class="lang-text-ar">أ</span><span class="lang-text-en">T</span>
+          </div>
+          <div class="badge-icon">★</div>
+          <h3 style="font-size: 19px; font-weight: bold; color: #111827; margin: 10px 0 5px 0;">
+            <span class="lang-text-ar">أ. معلم 24</span><span class="lang-text-en">Teacher 24</span>
+          </h3>
+          <p style="color: #059669; font-weight: bold; margin-bottom: 2px; font-size: 15px;">
+            <span class="lang-text-ar">التخصص</span><span class="lang-text-en">Specialty</span>
+          </p>
+          <p style="color: #6b7280; font-size: 13px; margin-bottom: 10px;">
+            <span class="lang-text-ar">المادة الدراسية</span><span class="lang-text-en">Subject</span>
+          </p>
+          <span style="background-color: #d1fae5; color: #065f46; padding: 4px 12px; border-radius: 20px; font-size: 12px; display: inline-block; font-weight: bold;">
+            <span class="lang-text-ar">5+ سنوات خبرة</span><span class="lang-text-en">5+ Years Exp</span>
+          </span>
+        </div>
+
+
+
+
+
+        <div class="teacher-card">
+          <div class="teacher-avatar" style="background: linear-gradient(135deg, #69616d, #8b5cf6);">
+            <span class="lang-text-ar">أ</span><span class="lang-text-en">T</span>
+          </div>
+          <div class="badge-icon">★</div>
+          <h3 style="font-size: 19px; font-weight: bold; color: #111827; margin: 10px 0 5px 0;">
+            <span class="lang-text-ar">أ. معلم 24</span><span class="lang-text-en">Teacher 24</span>
+          </h3>
+          <p style="color: #059669; font-weight: bold; margin-bottom: 2px; font-size: 15px;">
+            <span class="lang-text-ar">التخصص</span><span class="lang-text-en">Specialty</span>
+          </p>
+          <p style="color: #6b7280; font-size: 13px; margin-bottom: 10px;">
+            <span class="lang-text-ar">المادة الدراسية</span><span class="lang-text-en">Subject</span>
+          </p>
+          <span style="background-color: #d1fae5; color: #065f46; padding: 4px 12px; border-radius: 20px; font-size: 12px; display: inline-block; font-weight: bold;">
+            <span class="lang-text-ar">5+ سنوات خبرة</span><span class="lang-text-en">5+ Years Exp</span>
+          </span>
+        </div>
+
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+      </div>
+    </div>
+
+    <script defer src="./bundle.js"></script>
+
+    <script>
+        const observer = new MutationObserver((mutations, obs) => {
+            const rootDiv = document.getElementById('root');
+            
+            if (rootDiv && rootDiv.children.length > 0) {
+                
+                // 1. قلب اتجاه الهيدر بالقوة (شعار شمال، تغيير لغة يمين)
+                const headerNav = rootDiv.querySelector('nav') || rootDiv.firstElementChild;
+                if (headerNav) {
+                    headerNav.style.setProperty('flex-direction', 'row-reverse', 'important');
+                    
+                    const innerFlex = headerNav.querySelector('.flex') || headerNav;
+                    if(innerFlex) {
+                        innerFlex.style.setProperty('flex-direction', 'row-reverse', 'important');
+                    }
+                }
+
+                // دالة مسؤولة عن فحص وتغيير لغة كروت المعلمين لتلحق الهيدر
+                function syncTeachersLanguage(currentLang) {
+                    const container = document.getElementById('teachersContainer');
+                    if (!container) return;
+
+                    if (currentLang === 'AR') {
+                        // إذا كانت كبسة الهيدر مكتوب عليها AR يعني الهيدر شغال إنجليزي حالياً
+                        container.classList.add('lang-en');
+                    } else {
+                        // إذا كبسة الهيدر مكتوب عليها EN يعني الهيدر شغال عربي حالياً
+                        container.classList.remove('lang-en');
+                    }
+                }
+
+                // 2. ربط أزرار الهيدر (الرئيسية ولغـة الموقـع)
+                const allElements = rootDiv.querySelectorAll('a, span, button');
+                allElements.forEach(el => {
+                    const text = el.innerText.trim();
+
+                    // ربط كبسة الرئيسية لترجع لملف index.html
+                    if (text === 'الرئيسية' || text === 'Home') {
+                        el.style.cursor = 'pointer';
+                        el.onclick = function(e) {
+                            e.preventDefault();
+                            window.location.href = './index.html';
+                        };
+                    }
+
+                    // ربط زر تغيير اللغة (EN / AR) ليدعم الكروت التحتانية فوراً بالكبس
+                    if (text === 'EN' || text === 'AR') {
+                        // مزامنة مبدئية أول ما تفتح الصفحة
+                        syncTeachersLanguage(text);
+
+                        el.addEventListener('click', () => {
+                            setTimeout(() => {
+                                const updatedText = el.innerText.trim();
+                                syncTeachersLanguage(updatedText);
+                            }, 50);
+                        });
+                    }
+                });
+
+                // توفير الأداء وإيقاف المراقبة بعد تعديل الهيدر بنجاح
+                obs.disconnect();
+            }
+        });
+
+        observer.observe(document.getElementById('root'), {
+            childList: true,
+            subtree: true
+        });
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
+

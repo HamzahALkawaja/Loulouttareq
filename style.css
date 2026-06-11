@@ -1,0 +1,494 @@
+/* cyrillic-ext */
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/inter/v20/UcCO3FwrK3iLTeHuS_nVMrMxCp50SjIw2boKoduKmMEVuGKYAZJhiI2B.woff2)
+    format("woff2");
+  unicode-range:
+    U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/inter/v20/UcCO3FwrK3iLTeHuS_nVMrMxCp50SjIw2boKoduKmMEVuGKYAZthiI2B.woff2)
+    format("woff2");
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* greek-ext */
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/inter/v20/UcCO3FwrK3iLTeHuS_nVMrMxCp50SjIw2boKoduKmMEVuGKYAZNhiI2B.woff2)
+    format("woff2");
+  unicode-range: U+1F00-1FFF;
+}
+/* greek */
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/inter/v20/UcCO3FwrK3iLTeHuS_nVMrMxCp50SjIw2boKoduKmMEVuGKYAZxhiI2B.woff2)
+    format("woff2");
+  unicode-range:
+    U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
+}
+/* vietnamese */
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/inter/v20/UcCO3FwrK3iLTeHuS_nVMrMxCp50SjIw2boKoduKmMEVuGKYAZBhiI2B.woff2)
+    format("woff2");
+  unicode-range:
+    U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1,
+    U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329,
+    U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/inter/v20/UcCO3FwrK3iLTeHuS_nVMrMxCp50SjIw2boKoduKmMEVuGKYAZFhiI2B.woff2)
+    format("woff2");
+  unicode-range:
+    U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304,
+    U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB,
+    U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/inter/v20/UcCO3FwrK3iLTeHuS_nVMrMxCp50SjIw2boKoduKmMEVuGKYAZ9hiA.woff2)
+    format("woff2");
+  unicode-range:
+    U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC,
+    U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212,
+    U+2215, U+FEFF, U+FFFD;
+}
+
+body {
+  direction: rtl;
+}
+
+.site-header {
+  width: 100%;
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
+  border-bottom: 2px solid #d4af37;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  backdrop-filter: blur(10px);
+}
+
+.header-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 14px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.logo {
+  font-family: "Inter", sans-serif;
+  font-weight: 700;
+  font-size: 22px;
+  color: #d4af37;
+  text-decoration: none;
+}
+
+.header-nav {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.header-nav a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 10px 14px;
+  border-radius: 12px;
+  transition:
+    background 0.2s,
+    color 0.2s;
+}
+
+.header-nav a:hover {
+  background: rgba(212, 175, 55, 0.15);
+  color: #d4af37;
+}
+
+/* عندما يقل عرض الشاشة عن 768 بكسل (وضع الهاتف) */
+@media (max-width: 768px) {
+  .more-btn-class {
+    position: relative !important; /* بيلغي الـ absolute وبيرجعها للترتيب الطبيعي */
+    top: auto !important; /* بيلغي أي إزاحة رأسية جاية من الـ JS */
+    left: auto !important; /* بيلغي أي إزاحة أفقية */
+    transform: none !important; /* بيلغي أي تحريك مركب */
+    display: block !important;
+    margin: 30px auto !important; /* بيعطيها مسافة 30px تحت المربعات وبوسطنها */
+    width: fit-content !important; /* عشان تحافظ على حجمها وما تمط */
+  }
+}
+
+#loader {
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(
+    circle at center,
+    #ffffff 0%,
+    #f7f8fa 55%,
+    #edf1f5 100%
+  );
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999999;
+  overflow: hidden;
+  transition: opacity 0.8s ease;
+  font-family: "Cairo", sans-serif;
+}
+
+.loader-content {
+  position: relative;
+  text-align: center;
+  padding: 20px;
+}
+
+/* هالة ذهبية خلف الشعار */
+.loader-content::before {
+  content: "";
+  position: absolute;
+  width: 320px;
+  height: 320px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -55%);
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(212, 175, 55, 0.18) 0%,
+    rgba(212, 175, 55, 0.08) 40%,
+    transparent 75%
+  );
+  animation: glow 4s ease-in-out infinite;
+}
+
+.loader-logo {
+  width: 260px;
+  height: auto;
+  position: relative;
+  z-index: 2;
+  opacity: 0;
+  filter: drop-shadow(0 15px 35px rgba(0, 0, 0, 0.15));
+  animation:
+    logoReveal 1.2s ease forwards,
+    floatLogo 4s ease-in-out infinite 1.2s;
+}
+
+.loader-title {
+  margin-top: 25px;
+  font-size: 46px;
+  font-weight: 800;
+  color: #800020;
+  letter-spacing: 0.5px;
+  opacity: 0;
+  animation: fadeUp 1s ease forwards;
+  animation-delay: 0.4s;
+}
+
+.loader-title::after {
+  content: "";
+  display: block;
+  width: 100px;
+  height: 4px;
+  margin: 16px auto;
+  border-radius: 999px;
+  background: linear-gradient(to right, #b8860b, #f4d03f, #b8860b);
+}
+
+.loader-subtitle {
+  margin-top: 10px;
+  color: #666;
+  font-size: 21px;
+  font-weight: 500;
+  opacity: 0;
+  animation: fadeUp 1s ease forwards;
+  animation-delay: 0.7s;
+}
+
+/* دائرة تحميل احترافية */
+.loader-subtitle::after {
+  content: "";
+  display: block;
+  width: 42px;
+  height: 42px;
+  margin: 28px auto 0;
+  border-radius: 50%;
+  border: 3px solid rgba(128, 0, 32, 0.15);
+  border-top: 3px solid #800020;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes logoReveal {
+  0% {
+    opacity: 0;
+    transform: scale(0.75);
+  }
+
+  60% {
+    opacity: 1;
+    transform: scale(1.08);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(22px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes floatLogo {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes glow {
+  0%,
+  100% {
+    opacity: 0.6;
+    transform: translate(-50%, -55%) scale(1);
+  }
+
+  50% {
+    opacity: 1;
+    transform: translate(-50%, -55%) scale(1.15);
+  }
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* موبايل */
+@media (max-width: 768px) {
+  .loader-logo {
+    width: 190px;
+  }
+
+  .loader-title {
+    font-size: 34px;
+  }
+
+  .loader-subtitle {
+    font-size: 18px;
+  }
+}
+
+#home {
+  background-image: url("schoolpic.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  position: relative;
+}
+
+#home::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 45, 120, 0.4);
+}
+
+#home > * {
+  position: relative;
+  z-index: 2;
+}
+
+/* الشكل الافتراضي للهيدر (شفاف في الأعلى) */
+header {
+  background-color: transparent;
+  transition: all 0.3s ease-in-out; /* حركة ناعمة أثناء تحول اللون */
+}
+
+/* الشكل الاحترافي الجديد بعد النزول للأسفل (اخترنا هنا المظهر الضبابي العصري) */
+/* هذا الكلاس يشتغل تلقائياً عند النزول */
+/* عند النزول وتفعيل الكلاس */
+/* عند النزول: تحويل الهيدر إلى لون أبيض ناصع واحترافي */
+/* الهيدر الفخم عند النزول */
+header.header-active {
+  /* الكود القديم تبعك (الخلفية والظل والحدود) */
+  background: #0b0f19 !important;
+  box-shadow: 0 4px 20px rgba(212, 175, 55, 0.12) !important;
+  border-bottom: 1px solid #d4af37 !important;
+
+  /* الإضافة الجديدة لحل المشكلة */
+  position: fixed; /* أو sticky حسب كودك الأساسي لتثبيت الهيدر */
+  z-index: 9999 !important; /* هذا الرقم يضمن أن الهيدر سيكون في الطبقة العليا فوق أي زر أو بطاقة */
+}
+
+/* تحويل نصوص القائمة للون الأبيض العاجي الفخم */
+/* استهداف كل النصوص والروابط داخل الهيدر الفعال لجعلها بيضاء بالكامل */
+header.header-active a,
+header.header-active .nav-link,
+header.header-active span,
+header.header-active li,
+header.header-active div:not(.logo-text) {
+  color: #ffffff !important; /* أبيض ناصع لوضوح ممتاز */
+  font-weight: 500; /* سماكة متوسطة لتسهيل القراءة */
+  opacity: 1 !important; /* إلغاء أي شفافية قديمة للنصوص */
+  text-shadow: none; /* التأكد من عدم وجود ظل غامق يشوش النص */
+}
+
+/* تأثير الماوس (Hover) عشان تضل اللمسة الذهبية الفخمة شغالّة لما يمرر الماوس */
+header.header-active a:hover,
+header.header-active .nav-link:hover {
+  color: #d4af37 !important; /* يقلب ذهبي عند تمرير الماوس */
+  transition: color 0.2s ease-in-out;
+}
+
+/* الكود القاضي على مشكلة اللون الغامق */
+header.header-active * {
+  color: #ffffff !important;
+  opacity: 1 !important;
+}
+
+/* عشان لما تحرك الماوس فوقهم يقلب ذهبي فخم وما تضيع الحركة */
+header.header-active a:hover,
+header.header-active a:hover *,
+header.header-active .nav-link:hover,
+header.header-active .nav-link:hover * {
+  color: #d4af37 !important;
+}
+/* استهداف زر المزيد من المعلمين وتنزيل طبقته */
+header + div,
+.more-btn,
+button,
+a[href*="teacher"] {
+  z-index: 1 !important;
+}
+
+/* إخفاء العنوان الرئيسي والعنوان الفرعي داخل قسم الـ Hero فوق فقط */
+.hero-content h1,
+.hero-title,
+[class*="hero"] h1,
+[class*="hero"] h2,
+section:first-of-type h1,
+section:first-of-type h2 {
+  display: none !important;
+}
+
+/* إخفاء الكلمة الخضراء في القسم العلوي فقط بطريقة قياسية ونظيفة */
+section:first-of-type h2,
+section:first-of-type [class*="subtitle"] {
+  display: none !important;
+}
+
+/* 1. تصفير الحركات الفردية القديمة لضمان التماسك */
+section:first-of-type .flex.gap-4,
+section:first-of-type div:has(> .clock-icon),
+section:first-of-type .flex.justify-center.gap-2 {
+  margin-right: auto !important;
+  margin-left: auto !important;
+  left: auto !important;
+}
+
+/* 2. سحب قوي جداً للكتلة كاملة جهة الشمال */
+section:first-of-type .container > div,
+.hero-content {
+  position: relative !important;
+  transform: translateX(
+    -380px
+  ) !important; /* زدنا السحب للشمال للشاشات العادية */
+}
+
+/* 3. سحب هجومي للشاشات الكبيرة (الكمبيوتر) */
+@media (min-width: 1024px) {
+  section:first-of-type .container > div,
+  .hero-content {
+    transform: translateX(
+      -480px
+    ) !important; /* سحب أعمق عشان الفراغ الكبير بالشمال */
+  }
+}
+
+/* تنسيق زر اعرف المزيد ليصبح أبيض شفاف وواضح */
+section:first-of-type .flex.gap-4 a:last-of-type,
+section:first-of-type .flex.gap-4 button:last-of-type,
+section:first-of-type [class*="buttons"] *:last-child {
+  border-color: rgba(255, 255, 255, 0.6) !important; /* حدود بيضاء شفافة */
+  color: #ffffff !important; /* نص أبيض واضح جداً */
+  background-color: rgba(255, 255, 255, 0.05) !important; /* خلفية خفيفة جداً */
+  transition: all 0.3s ease;
+}
+
+/* تأثير رهيب عند تمرير الماوس فوق الزر */
+section:first-of-type .flex.gap-4 a:last-of-type:hover,
+section:first-of-type .flex.gap-4 button:last-of-type:hover,
+section:first-of-type [class*="buttons"] *:last-child:hover {
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.2
+  ) !important; /* تفتيح الخلفية عند الهوفر */
+  border-color: #ffffff !important;
+}
+
+/* إخفاء الإضاءة الخلفية المضيئة لمنع التشوه عند تغيير اللغة */
+section:first-of-type [class*="glow"],
+section:first-of-type [class*="blur"],
+section:first-of-type [class*="gradient-bg"],
+.hero-content ~ div[class*="absolute"] {
+  display: none !important;
+}
+
+@media screen and (max-width: 1024px) {
+  section:first-of-type .container > div,
+  .hero-content {
+    transform: none !important; /* زدنا السحب للشمال للشاشات العادية */
+  }
+
+  #home {
+    background-position: left;
+  }
+}
